@@ -2,9 +2,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>KYAF | Home</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 <!-- Google Fonts -->
 <link href='http://fonts.googleapis.com/css?family=Roboto:400,900italic,700italic,900,700,500italic,500,400italic,300italic,300,100italic,100|Open+Sans:400,300,400italic,300italic,600,600italic,700italic,700,800|Source+Sans+Pro:400,200,200italic,300,300italic,400italic,600,600italic,700' rel='stylesheet' type='text/css'>
@@ -17,10 +15,6 @@
 <link href="css/responsive.css" rel="stylesheet" type="text/css" />
 <link rel="stylesheet" href="layerslider/css/layerslider.css" type="text/css">
 <link rel="stylesheet" type="text/css" href="css/sea-green.css" title="sea-green" />
-
-
-
-
 
 <link href="css/contact.css" rel="stylesheet" type="text/css" /> <!-- AJAX Contact Form Stylesheet -->
 
@@ -157,66 +151,10 @@ $(function() {
 </style>
 </head>
 <body>
+
 <div class="theme-layout">
-<div id="top-bar">
-	<div class="container">
-		<ul>
-			<li>
-				<span class="style1">Mewa Majengo Road, Mombasa</span>			</li>
-			<li>
-				<span class="style1">+254 725 957 081 | +254 721 420 290	</span> </li>
-			<li>
-				<span class="style1">hello@kyaf.or.ke</span>			</li>
-		</ul> 
-		<div class="search-box">
-			<input class="submit-button" type="submit" value="" >
-			<input class="search-input" type="text" onBlur="if(this.value=='')this.value=this.defaultValue;" onFocus="if(this.value==this.defaultValue)this.value='';"  value="Search">
-		</div>
-	</div>
-</div><!--top bar-->
-
-
-<header>
-	<div class="container">
-		<div class="logo">
-			<a href="#" title=""><img src="images/kyaflogo.png" width="75" height="75"></a>
-		</div><!-- Logo -->
-		<nav class="menu">
-			<ul id="menu-navigation">
-				<li class="active"><a>HOME</a>
-						</li>
-				</li>
-				<li><a href="about.php">WHO WE ARE</a>
-
-				</li>
-				<li><a href="#">WHAT WE DO</a>
-				<ul>
-						<li><a href="#" title="">Projects</a></li>
-					</ul>
-				</li>
-				<li><a href="#">SMP</a>
-                    <ul>
-                        <li><a href="" title="">Twitter</a></li>
-                        <li><a href="" title="">Facebook</a></li>
-                        <li><a href="" title="">YouTube</a></li>
-                    </ul>
-                </li>
-				<li><a href="media.php">MEDIA</a>
-				</li>
-				<li><a href="#">YOUTH ASSEMBLIES</a>
-                    <ul>
-                        <li><a href="" title="">Kwale Youth Assembly</a></li>
-                        <li><a href="http://www.mya.kyaf.or.ke" title="">Mombasa Youth Assembly</a></li>
-                        <li><a href="" title="">Kilifi Youth Assembly</a></li>
-                    </ul>
-                </li>
-                <li><a href="contact-us.php">ENGAGE US</a></li>
-			</ul>
-		</nav><!-- Menu -->
-
-	</div>
-</header><!--header-->
-
+    <?php include "fragments/header.php";?>
+    <!--header-->
 <div id="layerslider-container-fw">
 	<div id="layerslider" style="width: 100%; height: 600px; margin: 0px auto; ">
 	
@@ -281,111 +219,8 @@ $(function() {
 		</div>
 	</div><!-- Message Box -->
 	
-</div><!-- Layer Slider -->			
+</div><!-- Layer Slider -->
 
-
-<section class="block">
-	<div class="container">
-	<div class="row">
-		<div class="col-md-9">
-			<div class="sec-heading">
-				<h2><strong>Our</strong> Support Programmes</h2>
-			</div><!-- Section Title -->
-			<div class="our-causes">	
-					<ul class="slides">
-						<li>
-							<div class="row">
-								<div class="col-md-4">
-									<div class="causes-image">
-										<img src="images/capacity_building.jpg" alt="thumb1" />
-										<div class="cause-heading">
-											<h3><b>Capacity Building</b></h3>
-										</div>
-											<div class="our-causes-hover">
-												<h3>Capacity Building</h3>
-												<p>In order to make governance more inclusive, trans formative capacity is needed. Governance will be strengthened with the youth and community recognizes the role in ensuring transparent and effective governance. To achieve this objective The foundation provide capacity building of Youth Assemblies across the country in trans-formative governance.</p>
-												
-											</div>
-									</div>
-								</div>
-								<div class="col-md-4">
-									<div class="causes-image">
-										<img src="images/research_youth_affairs.jpg" alt="thumb1" />
-										<div class="cause-heading">
-											<h3><b>Research on Youth Affairs</b></h3>
-										</div>
-										<div class="our-causes-hover">
-											<h3>Research on Youth Affairs</h3>
-											<p>In order to understand the dynamics of the changing society on youth affairs, extensive research has to be conducted to ensure implementation of impacting youth policies and programs successfully and in order to achieve this, The foundation will participate and collaborate with other stakeholders in research focusing on youth and related affairs.</p>
-											
-										</div>
-									</div>
-								</div>
-								<div class="col-md-4">
-									<div class="causes-image">
-										<img src="images/grant_aid_support.jpg" alt="thumb1" />
-											<div class="cause-heading">
-												<h3>Grant Aid Support</h3>
-												
-											</div>
-										<div class="our-causes-hover">
-											<h3>Grant Aid Support</h3>
-											<p>Through its vast network of donors and partners as well as its own kitty, The foundation seeks to support the activities of the youth assemblies to achieve goals and objectives of transforming and empowering their communities in governance and accountability of public institutions . To achieve this The foundation will establish, develop, maintain and grant aid in cash or in kind to youth Assemblies both in  Kenya and outside.</p>
-									
-										</div>
-									</div>		
-								</div>
-							</div>
-						</li>
-						<li>
-							<div class="row">
-								<div class="col-md-4">
-									<div class="causes-image">
-										<img src="images/youth_assembly_affairs.jpg" alt="thumb1" />
-										<div class="cause-heading">
-											<h3>Youth Assemblies Activities</h3>
-										</div>
-											<div class="our-causes-hover">
-												<h3>Youth Assemblies Activities</h3>
-												<p>Youth Assemblies conduct various activities that foster good cooperation between the stakeholders and the youth who foster positive change. These activities motivate and enable the youth to participate, dialogue and debate issues affecting them with respective representatives of various institutions both government at National and County level as well as organizations. The foundation will support these youth assemblies to implement these activities with success.</p>
-												
-											</div>
-									</div>
-								</div>
-								<div class="col-md-4">
-									<div class="causes-image">
-										<img src="images/Youth_affairs.jpg" alt="thumb1" />
-										<div class="cause-heading">
-											<h3>Youth Affairs</h3>
-										</div>
-										<div class="our-causes-hover">
-											<h3>Youth Affairs</h3>
-											<p>Supporting Youth Affairs through various youth-led empowerment programs are aimed at creating healthier and higher qualities of life for the youth to ensure positive developmental change is achieved. These promote youth competence, confidence and connections among the youth to drive the change they need and this is among the objectives of the foundation.</p>
-									
-										</div>
-									</div>
-								</div>
-								
-							</div>
-						</li>
-					</ul>
-			</div><!-- Causes -->
-		</div>
-		
-		<div class="col-md-3 pull-right">
-			<div class="sec-heading">
-				<h2><strong>Support</strong>Our Cause</h2>
-			</div>
-			<div class="donate-us-box">
-				<h5>MAKE A DIFFERENCE</h5>
-				<span><h5>Your can assist in supporting our programs towards an empowered youth.</h5></span>
-				
-				<a href="#" class="donate-btn" title="">Donate To Us</a>
-			</div><!-- Donate Us Box -->
-		</div>
-	</div>
-	</div>
-</section>
 <section class="block">
 	<div class="container">
 		<div class="row">
@@ -448,13 +283,15 @@ This review process has been life-changing both on an institutional as well as p
 </section>			
 </div>
 
+
+
+
 <div class="footer-bottom">
 	<div class="container">
 		<p><span class="style1">Copyright © 2020 Kenya Youth Assemblies Foundation. </span><span>All rights reserved.</span> </p>
 
 	</div>
 </div><!-- Bottom Footer Strip -->
-
 
 </body>
 </html>

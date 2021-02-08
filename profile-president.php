@@ -161,52 +161,7 @@ $(function() {
 </head>
 <body>
 <div class="theme-layout">
-<div id="top-bar">
-	<div class="container">
-		<ul>
-			<li>
-				<span class="style1">Mewa Majengo Road, Mombasa</span>			</li>
-			<li>
-				<span class="style1">+254 725 957 081 | +254 721 420 290	</span> </li>
-			<li>
-				<span class="style1">hello@kyaf.or.ke</span>			</li>
-		</ul> 
-		<div class="search-box">
-			<input class="submit-button" type="submit" value="" >
-			<input class="search-input" type="text" onBlur="if(this.value=='')this.value=this.defaultValue;" onFocus="if(this.value==this.defaultValue)this.value='';"  value="Search">
-		</div>
-	</div>
-</div><!--top bar-->
-
-
-<header>
-	<div class="container">
-		<div class="logo">
-			<a href="#" title=""><h1>KYAF</h1></a>
-		</div><!-- Logo -->
-		<nav class="menu">
-			<ul id="menu-navigation">
-				<li><a href="index.php">HOME</a>
-			  </li>
-				</li>
-				<li class="active"><a>WHO WE ARE</a>
-								
-				</li>
-				<li><a href="#">WHAT WE DO</a>	
-				</li>
-				<li><a href="#">PRESS</a>
-			  </li>
-				<li><a href="#">MEDIA</a>
-				</li>
-				<li><a href="#">YOUTH ASSEMBLIES</a>
-			  </li>
-									<li><a href="#">ENGAGE US</a></li>
-			</ul>   
-		</nav><!-- Menu -->
-
-	</div>		
-</header><!--header-->
-
+    <?php include "fragments/header.php";?><!--header-->
 <div class="top-image">
 	<img src="images/single-page-top2.jpg" alt="" />
 </div><!-- Page Top Image -->

@@ -1,10 +1,8 @@
 <!DOCTYPE html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>KYAF | Profile</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-
+<title>KYAF | Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 <!-- Google Fonts -->
 <link href='http://fonts.googleapis.com/css?family=Roboto:400,900italic,700italic,900,700,500italic,500,400italic,300italic,300,100italic,100|Open+Sans:400,300,400italic,300italic,600,600italic,700italic,700,800|Source+Sans+Pro:400,200,200italic,300,300italic,400italic,600,600italic,700' rel='stylesheet' type='text/css'>
@@ -152,75 +150,76 @@ $(function() {
 <style type="text/css">
 <!--
 .style1 {color: #FFFFFF}
-.style2 {
-	color: #00FFFF;
-	font-weight: bold;
-}
+.style2 {color: #00CC00}
 -->
 </style>
 </head>
 <body>
-<div class="theme-layout">
-    <?php include "fragments/header.php";?><!--header-->
-<div class="top-image">
-	<img src="images/single-page-top2.jpg" alt="" />
-</div><!-- Page Top Image -->
-<br></br>
-<br></br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="about.php" class="style2"> >>Back to Team</a>
-<section class="page">
-	<div class="container">
-		<div class="row">
-			<div class="profile-page">
-				<div class="col-md-6">
-					<div class="tab-content profile-tabs-content" id="myTabContent">
-						<div id="profile-pic1" class="tab-pane fade in active">
-							<img src="images/barua_mshenga_finance.jpg" alt="" />
-						</div>
-						
-					</div>					
-					
-									
-				</div>
-				<div class="col-md-6">
-					<h1><i class="icon-user"></i>Barua Mshenga</h1>
-					<span class="designation">Planning & Finance Director</span>
-					<ul class="profile-info">
-						<li>
-							<span><i class="icon-lightbulb"></i>Experience:</span>
-							<p>10 Years</p>
-						</li>
-						<li>
-							<span><i class="icon-envelope"></i>Email:</span>
-							<p>m.barua@kyaf.or.ke</p>
-						</li>
-						<li>
-						
-						</li>
-					</ul>
-					<p>Mr. Barua Mshenga is an experienced administrative professional having served as a Senior Administrative Assistant at the County Government of Mombasa. 
-Mr. Barua Mshenga has planning and finance management experience having served as a Monitoring and Evaluation officer at Kenya Muslim Youth Alliance (KMYA) and Programs officer at Coast –Rural Development Organization(C-R.D.O) and Eco-Ethics International – Kenya Chapter.
-Mr. Barua Mshenga is has a Diploma in Business Management and is currently pursing a Bachelor of Business Management at Moi University.
-Mr. Barua Mshenga’s role as the Planning & Finance Manager entails managing the finances and planning of the organization.        
 
-</p>
+<?php include "fragments/header.php";?><!--header-->
 
-					
-				</div>
+<?php
+$screen_name = 'JMchfundi';
+$count = 10; // How many tweets to output
+$retweets = 1; // 0 to exclude, 1 to include
 
-		  </div>
-		</div>	
-	</div>	
-		
-	
-</section>
-</div>
-<div class="footer-bottom">
-	<div class="container">
-		<p><span class="style1">Copyright © 2020 Kenya Youth Assemblies Foundation. </span><span>All rights reserved.</span> </p>
+// Populate these with the keys/tokens you just obtained
+$oauthAccessToken = '';
+$oauthAccessTokenSecret = '';
+$oauthConsumerKey = '';
+$oauthConsumerSecret = '';
 
-	</div>
-</div><!-- Bottom Footer Strip -->
+// First we populate an array with the parameters needed by the API
+$oauth = array(
+    'count' => $count,
+    'include_rts' => $retweets,
+    'oauth_consumer_key' => $oauthConsumerKey,
+    'oauth_nonce' => time(),
+    'oauth_signature_method' => 'HMAC-SHA1',
+    'oauth_timestamp' => time(),
+    'oauth_token' => $oauthAccessToken,
+    'oauth_version' => '1.0'
+);
 
+$arr = array();
+foreach($oauth as $key => $val)
+    $arr[] = $key.'='.rawurlencode($val);
+
+// Then we create an encypted hash of these values to prove to the API that they weren't tampered with during transfer
+$oauth['oauth_signature'] = base64_encode(hash_hmac('sha1', 'GET&'.rawurlencode('https://api.twitter.com/1.1/statuses/user_timeline.json').'&'.rawurlencode(implode('&', $arr)), rawurlencode($oauthConsumerSecret).'&'.rawurlencode($oauthAccessTokenSecret), true));
+
+$arr = array();
+foreach($oauth as $key => $val)
+    $arr[] = $key.'="'.rawurlencode($val).'"';
+
+// Next we use Curl to access the API, passing our parameters and the security hash within the call
+$tweets = curl_init();
+curl_setopt_array($tweets, array(
+    CURLOPT_HTTPHEADER => array('Authorization: OAuth '.implode(', ', $arr), 'Expect:'),
+    CURLOPT_HEADER => false,
+    CURLOPT_URL => 'https://api.twitter.com/1.1/statuses/user_timeline.json?count='.$count.'&include_rts='.$retweets,
+    CURLOPT_RETURNTRANSFER => true,
+    CURLOPT_SSL_VERIFYPEER => false,
+));
+
+$json = curl_exec($tweets);
+curl_close($tweets);
+
+// $json now contains the response from the Twitter API, which should include however many tweets we asked for.
+
+// Loop through them for output
+foreach(json_decode($json) as $status) {
+    // Convert links back into actual links, otherwise they're just output as text
+    $enhancedStatus = htmlentities($status->text, ENT_QUOTES, 'UTF-8');
+    $enhancedStatus = preg_replace('/http:\/\/t.co\/([a-zA-Z0-9]+)/i', '<a href="http://t.co/$1">http://$1</a>', $enhancedStatus);
+    $enhancedStatus = preg_replace('/https:\/\/t.co\/([a-zA-Z0-9]+)/i', '<a href="https://t.co/$1">http://$1</a>', $enhancedStatus);
+
+    // Finally, output a simple paragraph containing the tweet and a link back to the Twitter account itself. You can format/style this as you like.
+    ?>
+    <p>&quot;<?php echo $enhancedStatus; ?>&quot;<br /><a href="https://twitter.com/intent/user?screen_name=<?php echo $screen_name; ?>">@<?php echo $screen_name; ?></a></p>
+    <?php
+}
+?>
 
 </body>
 </html>

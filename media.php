@@ -158,57 +158,8 @@ $(function() {
 </head>
 <body>
 <div class="theme-layout">
-<div id="top-bar">
-	<div class="container">
-		<ul>
-			<li>
-				<span class="style1">Mewa Majengo Road, Mombasa</span>			</li>
-			<li>
-				<span class="style1">+254 725 957 081 | +254 721 420 290	</span> </li>
-			<li>
-				<span class="style1">hello@kyaf.or.ke</span>			</li>
-		</ul> 
-		<div class="search-box">
-			<input class="submit-button" type="submit" value="" >
-			<input class="search-input" type="text" onBlur="if(this.value=='')this.value=this.defaultValue;" onFocus="if(this.value==this.defaultValue)this.value='';"  value="Search">
-		</div>
-	</div>
-</div><!--top bar-->
+    <?php include "fragments/header.php";?><!--header-->
 
-
-<header>
-	<div class="container">
-		<div class="logo">
-			<a href="#" title=""><h1>KYAF</h1></a>
-		</div><!-- Logo -->
-		<nav class="menu">
-			<ul id="menu-navigation">
-				<li><a href="index.php">HOME</a>
-						</li>
-				</li>
-				<li><a href="about.php">WHO WE ARE</a>
-								
-				</li>
-				<li><a href="#">WHAT WE DO</a>
-				<ul>
-						<li><a href="#" title="">Projects</a></li>
-					</ul>
-				</li>
-				<li><a href="#">PRESS</a>
-									</li>
-				<li class="active"><a href="#">MEDIA</a>
-				</li>
-				<li><a href="#">YOUTH ASSEMBLIES</a>
-				<ul>
-						<li><a href="http://www.mya.kyaf.or.ke" title="">Mombasa Youth Assembly</a></li>
-					</ul>
-									</li>
-									<li><a href="contact-us.php">ENGAGE US</a></li>
-			</ul>   
-		</nav><!-- Menu -->
-
-	</div>		
-</header><!--header-->
 <div class="top-image">
 	<img src="images/single-page-top2.jpg"alt="" />
 </div><!-- Page Top Image -->		
@@ -219,17 +170,19 @@ $(function() {
 			<div class="page-title">
 				<h1>Media</span></h1>
 			</div><!-- Page Title -->
-			<ul class="gallery-tabs nav nav-tabs" id="myTab">
-				<li class="active"><a data-toggle="tab" href="#meetings">MEETINGS</a></li>
-				<li class=""><a data-toggle="tab" href="#trainings">TRAININGS</a></li>
-				<li class=""><a data-toggle="tab" href="#community">COMMUNITY</a></li>
-				<li class=""><a data-toggle="tab" href="#research">RESEARCH</a></li>
-				<li class=""><a data-toggle="tab" href="#featured">FEATURED</a></li>
-			</ul><!-- Selectors -->	
 			<div class="gallery-content tab-content" id="myTabContent">
 				<div id="events" class="tab-pane fade active in">
-					<div class="row">
-						<div class="col-md-3">
+                    <div class="row col-md-6">
+                        <div class="col-md-3">
+                            <div>
+                                <iframe scrolling="yes" src="http://www.facebook.com/plugins/likebox.php?href=http%3A%2F%2Fwww.facebook.com%2Fmombasayouthassembly&width=500&height=600&stream=true&header=true"
+                                        style="border:none; overflow:hidden; width:500px; height:600px; float:left;"></iframe>
+                            </div>
+                        </div>
+
+                    </div>
+					<div class="row col-md-6">
+						<div class="col-md-12 row">
 							<div class="gallery-image">
 								<img src="images/kyaf-kilifi.jpg" alt="" />
 								<span>MEDIA</span>
@@ -243,11 +196,24 @@ $(function() {
 							</div>
 							<h3 class="image-title"><a href="#" title="">KYAF Courtesy Call to Kilifi County Assembly Speaker</a></h3>
 						</div>
-						
+                        <div class="col-md-12 row">
+                            <div>
+                                <div>
+                                    <a class="twitter-timeline"
+                                       href="https://twitter.com/AssembliesYouth?ref_src=twsrc%5Etfw"
+                                       data-width="600"
+                                       data-height="200"
+                                       data-theme="dark"
+                                       scrolling="yes"
+                                    ></a>
+                                    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                                </div>
+                            </div>
+                        </div>
 					</div>
 				</div>	<!-- Featured -->	  
-			</div>		  
-	</div>
+			</div>
+    </div>
 
 
 </section>
