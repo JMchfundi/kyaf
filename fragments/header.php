@@ -267,7 +267,7 @@
 
                     </ul><!-- Drop Down -->
                 </li>
-                <li><a href="contact.php">Contact us</a>
+                <li><a href="contact-us.php">Contact us</a>
 
                 </li>
             </ul>
