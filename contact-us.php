@@ -88,12 +88,14 @@ $(window).load(function(){
 			<div class="col-md-6">
 				<div class="contact-info">
 					<h3 class="sub-head">CONTACT INFORMATION</h3>
-			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1183.2144297430325!2d39.661871921450896!3d-4.052407094141826!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x184012daabdc630d%3A0x6bb1fcadd743988e!2sHalwa%20Bawaly%20(MSA)!5e0!3m2!1sen!2ske!4v1578500522790!5m2!1sen!2ske" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>	
+                    <div style="max-width:100%;list-style:none; transition: none;overflow:hidden;width:600px;height:450px;"><div id="gmapdisplay" style="height:100%; width:100%;max-width:100%;"><iframe style="height:100%;width:100%;border:0;" frameborder="0" src="https://www.google.com/maps/embed/v1/place?q=aryan+plaza+Movie+Theater&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"></iframe></div><a class="embed-maphtml" href="https://www.embed-map.com" id="get-mapdata">https://www.embed-map.com</a><style>#gmapdisplay img{max-width:none!important;background:none!important;font-size: inherit;font-weight:inherit;}</style></div>
 			
 					<ul class="contact-details">
 						<li>
 							<span><i class="icon-home"></i>ADDRESS</span>
-							<p>Mewa Majengo Road, Mombasa</p>
+							<p>Second Floor, Door 4, Aryan Plaza Opp. AAR Clinic,
+                                Next to Basco Paints Machakos Street.
+                            </p>
 						</li>
 						<li>
 							<span><i class="icon-phone-sign"></i>PHONE NO</span>
@@ -101,7 +103,7 @@ $(window).load(function(){
 						</li>
 						<li>
 							<span><i class="icon-envelope-alt"></i>EMAIL ID</span>
-							<p>hello@kyaf.or.ke / info@kyaf.or.ke</p>
+							<p>info@kyaf.or.ke</p>
 						</li>
 						<li>
 							<span><i class="icon-link"></i>WEB ADDRESS</span>
